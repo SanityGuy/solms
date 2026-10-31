@@ -1,0 +1,18 @@
+@extends('layouts.admin')
+
+@section('title', 'Edit Lesson')
+@section('heading', 'Edit Lesson')
+
+@section('content')
+    <div class="mb-8">
+        <a href="{{ route('admin.lessons.show', $lesson) }}" class="text-sm text-slate-400 transition hover:text-blue-400">
+            ← Back to lesson
+        </a>
+        <h1 class="mt-4 text-2xl font-bold text-white">Edit lesson</h1>
+        <p class="mt-1 text-sm text-slate-400">Update the details of {{ $lesson->title }}.</p>
+    </div>
+
+    <div class="max-w-3xl rounded-xl border border-slate-800 bg-slate-900 p-6 sm:p-8">
+        @include('admin.lessons._form', ['lesson' => $lesson])
+    </div>
+@endsection
