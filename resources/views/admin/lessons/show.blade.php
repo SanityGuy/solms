@@ -22,6 +22,11 @@
                 class="rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-500">
                 Edit lesson
             </a>
+
+            <a href="{{ route('admin.lessons.chapters.index', $lesson) }}"
+                class="rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-500">
+                Manage chapters
+            </a>
         </div>
     </div>
 
@@ -33,7 +38,8 @@
         <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <p class="text-sm text-slate-400">Total pages</p>
             <p class="mt-2 text-3xl font-bold text-white">
-                {{ $lesson->chapters->sum(fn($chapter) => $chapter->pages->count()) }}</p>
+                {{ $lesson->chapters->sum(fn($chapter) => $chapter->pages->count()) }}
+            </p>
         </div>
         <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <p class="text-sm text-slate-400">Created by</p>
