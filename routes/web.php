@@ -2,19 +2,21 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Student\LearningController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/dashboard', function (\Illuminate\Http\Request $request) {
+Route::get('/dashboard', function (Request $request) {
     if ($request->user()->isAdmin()) {
-        return redirect()->route('admin.lessons.index');
+        return redirect()->route('admin.dashboard');
     }
 
     return redirect()->route('learn.index');
@@ -32,6 +34,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::resource('users', UserController::class);
     Route::resource('lessons', LessonController::class);
     Route::resource('lessons.chapters', ChapterController::class);

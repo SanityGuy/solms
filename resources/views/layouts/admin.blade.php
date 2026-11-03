@@ -15,15 +15,15 @@
     <div class="min-h-screen lg:flex">
         <aside class="w-full border-b border-slate-800 bg-slate-900 lg:min-h-screen lg:w-64 lg:border-b-0 lg:border-r">
             <div class="flex h-16 items-center justify-between border-b border-slate-800 px-6">
-                <a href="{{ route('dashboard') }}" class="text-xl font-bold tracking-tight">
+                <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold tracking-tight">
                     <span class="text-blue-500">So</span>LMS
                 </a>
                 <span class="rounded-md bg-blue-500/10 px-2 py-1 text-xs font-semibold text-blue-400">ADMIN</span>
             </div>
 
             <nav class="flex gap-2 overflow-x-auto p-4 lg:flex-col">
-                <a href="{{ route('dashboard') }}"
-                    class="rounded-lg px-4 py-3 text-sm font-medium text-slate-400 transition hover:bg-slate-800 hover:text-white">
+                <a href="{{ route('admin.dashboard') }}"
+                    class="rounded-lg px-4 py-3 text-sm font-medium transition {{ request()->routeIs('admin.dashboard') ? 'bg-blue-600/15 text-blue-400' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }}">
                     Dashboard
                 </a>
                 <a href="{{ route('admin.lessons.index') }}"
