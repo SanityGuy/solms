@@ -18,15 +18,17 @@
                 </p>
             </div>
 
-            <a href="{{ route('admin.lessons.edit', $lesson) }}"
-                class="rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-500">
-                Edit lesson
-            </a>
+            <div class="flex flex-row gap-2">
+                <a href="{{ route('admin.lessons.edit', $lesson) }}"
+                    class="rounded-lg border-2 border-blue-600 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-500">
+                    Edit lesson
+                </a>
 
-            <a href="{{ route('admin.lessons.chapters.index', $lesson) }}"
-                class="rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-500">
-                Manage chapters
-            </a>
+                <a href="{{ route('admin.lessons.chapters.index', $lesson) }}"
+                    class="rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-500">
+                    Manage chapters
+                </a>
+            </div>
         </div>
     </div>
 

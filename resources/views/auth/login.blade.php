@@ -8,17 +8,17 @@
         <!-- Username -->
         <div>
             <x-input-label for="username" value="Email or Username" />
-            <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"
-                required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
+            <x-text-input id="username" class="block mt-1 w-full text-slate-400" type="text" name="username"
+                :value="old('username')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('username')" class="mt-2 text-white" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
+            <x-text-input id="password" class="block mt-1 w-full text-slate-400" type="password" name="password"
+                required autocomplete="current-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -29,7 +29,7 @@
                 <input id="remember_me" type="checkbox"
                     class="rounded bg-slate-900 border-slate-700 text-blue-600 shadow-sm focus:ring-blue-500"
                     name="remember">
-                <span class="ms-2 text-sm text-slate-400">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-white">{{ __('Remember me') }}</span>
             </label>
         </div>
 

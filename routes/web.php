@@ -12,8 +12,8 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/dashboard', function () {
-    if (auth()->user()->isAdmin()) {
+Route::get('/dashboard', function (\Illuminate\Http\Request $request) {
+    if ($request->user()->isAdmin()) {
         return redirect()->route('admin.lessons.index');
     }
 
