@@ -13,17 +13,13 @@
     <main class="relative flex min-h-screen items-center justify-center overflow-hidden bg-cover bg-center px-4 py-10"
         style="background-image: url('{{ asset('images/solms.jpg') }}')">
 
-        <div class="absolute inset-0 bg-white/65 backdrop-blur-[3px]"></div>
+        <div class="absolute inset-0 bg-slate-600/65 backdrop-blur-[3px]"></div>
 
         <div class="relative z-10 w-full max-w-md">
             <div
                 class="rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:p-10">
 
                 <div class="mb-8 text-center">
-                    <div
-                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl font-black text-white shadow-lg shadow-blue-600/20">
-                        S
-                    </div>
 
                     <h1 class="mt-5 text-3xl font-bold tracking-tight text-slate-900">
                         Welcome back
@@ -49,28 +45,23 @@
                 <form method="POST" action="{{ route('login') }}" class="space-y-5">
                     @csrf
 
+
                     <div>
-                        <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">
+                        <label for="username" class="mb-2 block text-sm font-semibold text-slate-700">
                             Username or Email
                         </label>
 
-                        <input id="email" name="email" type="text" value="{{ old('email') }}" required autofocus
-                            autocomplete="username" placeholder="Enter your username or email"
+                        <input id="username" name="username" type="text" value="{{ old('username') }}" required
+                            autofocus autocomplete="username" placeholder="Enter your username or email"
                             class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
                     </div>
+
 
                     <div>
                         <div class="mb-2 flex items-center justify-between">
                             <label for="password" class="text-sm font-semibold text-slate-700">
                                 Password
                             </label>
-
-                            @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}"
-                                    class="text-xs font-semibold text-blue-600 hover:text-blue-700">
-                                    Forgot password?
-                                </a>
-                            @endif
                         </div>
 
                         <input id="password" name="password" type="password" required autocomplete="current-password"
@@ -90,7 +81,7 @@
                     </button>
                 </form>
 
-                <div class="my-7 border-t border-slate-100"></div>
+                <div class="my-2 border-t border-slate-100"></div>
 
                 <div class="text-center">
                     <p class="text-sm font-medium text-slate-700">
