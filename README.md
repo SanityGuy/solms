@@ -31,5 +31,16 @@ This project uses the following:
 
 Currently contributing is currently closed as the development continues. For suggestions you can join my [Discord Server](https://discord.gg/EZ4XBunzYg) and head over to the suggestions discuss channel.
 
+## TODO
+Last Updated on 11/05/2026 (DD/MM/YYYY)
+<ul>
+    <li>Enhance authentication, logic, UI, and user interface</li>
+    <li>Fix user & admin changing email</li>
+    <li>Add messaging and friends feature</li>
+    <li>Add profile pictures and banners</li>
+    <li>Add quizzes and calenders/datas</li>
+    <li>Multi-lingual feature</li>
+</ul>
+
 ## License
 This project is licensed under the [MIT License](LICENSE)
