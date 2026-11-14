@@ -6,7 +6,8 @@
     <div class="mb-10">
         <p class="text-sm font-semibold text-blue-600">YOUR LEARNING SPACE</p>
         <h1 class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Welcome back,
-            {{ auth()->user()->display_name }}.</h1>
+            {{ auth()->user()->display_name }}.
+        </h1>
         <p class="mt-3 text-slate-500">Explore your lessons and continue learning at your own pace.</p>
     </div>
 
@@ -26,10 +27,13 @@
                     S</div>
                 <h3 class="text-lg font-bold text-slate-900 transition group-hover:text-blue-600">{{ $lesson->title }}</h3>
                 <p class="mt-2 min-h-12 text-sm leading-6 text-slate-500">
-                    {{ $lesson->description ?: 'Explore this lesson and start learning.' }}</p>
+                    {{ $lesson->description ?: 'Explore this lesson and start learning.' }}
+                </p>
                 <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
                     <span class="text-xs font-medium text-slate-400">{{ $lesson->chapters_count }} chapters</span>
-                    <span class="text-sm font-semibold text-blue-600">Start learning →</span>
+                    <span class="text-sm font-semibold text-blue-600">Start learning
+                        <x-lucide-arrow-right class="ml-1 inline h-5 w-4" />
+                    </span>
                 </div>
             </a>
         @empty

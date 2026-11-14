@@ -51,7 +51,8 @@
                 @else
                     <a href="{{ route('learn.lesson', $lesson) }}"
                         class="rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-700">Finish
-                        chapter →</a>
+                        chapter
+                        <x-lucide-arrow-right class="ml-1 inline h-5 w-4" /></a>
                 @endif
             </div>
         </article>
