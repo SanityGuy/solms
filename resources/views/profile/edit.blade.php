@@ -102,48 +102,5 @@
             </form>
         </section>
 
-        <section class="rounded-2xl border border-red-200 bg-white p-6 shadow-sm">
-            <div class="mb-5">
-                <h2 class="text-lg font-semibold text-red-700">Delete Account</h2>
-                <p class="mt-1 text-sm text-slate-500">Permanently delete your account. This action cannot be undone.</p>
-            </div>
-
-            <button type="button" onclick="document.getElementById('delete-account-modal').classList.remove('hidden')"
-                class="rounded-xl border border-red-200 px-5 py-3 text-sm font-semibold text-red-600 transition hover:bg-red-50">
-                Delete Account
-            </button>
-        </section>
-    </div>
-
-    <div id="delete-account-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/50 p-4">
-        <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
-            <h2 class="text-lg font-bold text-slate-900">Delete your account?</h2>
-            <p class="mt-2 text-sm text-slate-500">This action is permanent. Enter your password to confirm.</p>
-
-            <form method="POST" action="{{ route('profile.destroy') }}" class="mt-6 space-y-4">
-                @csrf
-                @method('DELETE')
-
-                <div>
-                    <label for="delete_password" class="mb-2 block text-sm font-medium text-slate-700">Password</label>
-                    <input id="delete_password" name="password" type="password" required autocomplete="current-password"
-                        class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-red-500 focus:ring-2 focus:ring-red-100">
-                    @error('password', 'userDeletion')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="flex justify-end gap-3">
-                    <button type="button" onclick="document.getElementById('delete-account-modal').classList.add('hidden')"
-                        class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50">
-                        Cancel
-                    </button>
-                    <button type="submit"
-                        class="rounded-xl bg-red-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-red-700">
-                        Confirm Deletion
-                    </button>
-                </div>
-            </form>
-        </div>
     </div>
 @endsection

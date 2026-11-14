@@ -84,10 +84,25 @@
                         </div>
 
                         <div>
-                            <label class="mb-2 block text-sm font-medium text-slate-300">Email Address</label>
-                            <input value="{{ $user->email }}" disabled
-                                class="w-full cursor-not-allowed rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-3 text-sm text-slate-500">
-                            <p class="mt-2 text-xs text-slate-500">Contact another administrator to change your email.</p>
+                            <label for="email" class="mb-2 block text-sm font-medium text-slate-300">Email Address</label>
+                            <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}" required
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-sm text-white outline-none focus:border-blue-500">
+                            @error('email')
+                                <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="current_password" class="mb-2 block text-sm font-medium text-slate-300">
+                                Current Password
+                            </label>
+                            <input id="current_password" name="current_password" type="password"
+                                autocomplete="current-password"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 text-sm text-white outline-none focus:border-blue-500">
+                            <p class="mt-2 text-xs text-slate-500">Required only when changing your email address.</p>
+                            @error('current_password')
+                                <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <button type="submit"

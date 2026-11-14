@@ -23,10 +23,13 @@ class ProfileController extends Controller
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->update($request->validated());
+        $validated = $request->validated();
+
+        unset($validated['current_password']);
+
+        $request->user()->update($validated);
 
         return Redirect::route('profile.edit')
             ->with('status', 'profile-updated');
     }
-
 }
