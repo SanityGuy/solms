@@ -3,7 +3,8 @@
 @section('title', $chapter->title)
 
 @section('content')
-    <a href="{{ route('learn.lesson', $lesson) }}" class="text-sm font-medium text-blue-600 hover:text-blue-700">←
+    <a href="{{ route('learn.lesson', $lesson) }}" class="text-sm font-medium text-blue-600 hover:text-blue-700">
+        <x-lucide-arrow-left class="ml-1 inline h-5 w-4" />
         {{ $lesson->title }}</a>
 
     <div class="mt-6">
@@ -33,7 +34,9 @@
             @if($chapter->pages->isNotEmpty())
                 <a href="{{ route('learn.page', [$lesson, $chapter, $chapter->pages->first()]) }}"
                     class="mt-6 inline-block rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700">Start
-                    chapter →</a>
+                    chapter
+                    <x-lucide-arrow-right class="ml-1 inline h-5 w-4" />
+                </a>
             @endif
         </section>
     </div>
